@@ -1,7 +1,7 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
-const openWeatherKey = '3321fb262ae62ce9675dd8f70e36f0b9';
+
 // Require Express to run server and routes
 const port = '3001';
 const express = require('express');
@@ -17,13 +17,16 @@ app.use(bodyParser.json());
 // Cors for cross origin allowance
 app.use(cors())
 
-app.get('/test', function(req, res){
-    res.send(projectData);
-})
+app.route('/project')
+    .get( function(req, res){
+        res.send(projectData);
+    }).post(function(req, res){
+        projectData = req.body;
+        console.log("From client", req.body);
+        res.send(projectData)
+    })
 
-// Initialize the main project folder
 app.use(express.static('website'));
-
 
 // Setup Server
 app.listen(port, () => {
