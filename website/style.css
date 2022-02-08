@@ -25,7 +25,7 @@ body{
     background: rgba(59, 74, 107, .4);
 }
 
-#entryHolder{
+#entryHolder, #entryHeader{
     display: flex;
     justify-content: space-evenly
 }

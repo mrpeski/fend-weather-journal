@@ -1,5 +1,5 @@
 /* Global Variables */
-const openWeatherKey = '3321fb262ae62ce9675dd8f70e36f0b9';
+const openWeatherKey = '3321fb262ae62ce9675dd8f70e36f0b9&units=metric';
 const baseUrl = 'http://api.openweathermap.org/data/2.5';
 
 // Create a new date instance dynamically with JS
@@ -18,6 +18,9 @@ window.addEventListener('load', main);
 async function handleGenerateClick(){
     let zip = document.getElementById("zip").value;
     let feelings = document.getElementById("feelings").value;
+
+    if (!zip) return alert("Please fill in your zip code. You don't have to tell us how you feel.");
+
     let data = {
         date: newDate,
         content: feelings
