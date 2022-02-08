@@ -1,14 +1,14 @@
 body{
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0
 }
 
 #app{
     display: grid;
     grid-auto-rows: minmax(56px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
-    background: #f23557;
+    min-height:100vh;
+    background: hsl(349deg 88% 58%);
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
@@ -17,7 +17,8 @@ body{
 }
 
 .holder{
-
+    width: 100%;
+    align-self: center;
 }
 
 .entry{
@@ -25,27 +26,22 @@ body{
 }
 
 #entryHolder{
-
+    display: flex;
+    justify-content: space-evenly
 }
 
-#date{
-
+#generate {
+    cursor: pointer
 }
 
-#temp{
 
-}
-
-#content{
-
-}
-
-.headline {
-
-}
 .title{
-
+    text-align: center
 }
+.myInput {
+    width: 100%;
+}
+
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
